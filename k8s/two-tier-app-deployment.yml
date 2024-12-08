@@ -19,7 +19,7 @@ spec:
           image: trainwithshubham/flaskapp:latest
           env:
             - name: MYSQL_HOST
-              value: "10.98.19.211"          # this is your mysql's service clusture IP, Make sure to change it with yours
+              value: "10.244.0.47"          # this is your mysql's service clusture IP, Make sure to change it with yours
             - name: MYSQL_PASSWORD
               value: "admin"
             - name: MYSQL_USER
@@ -29,3 +29,31 @@ spec:
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
+          resources:
+            requests: 
+             cpu: "500m"  
+             memory: "64mi"
+            limits: 
+              cpu: "1000m"
+              memory: "128mi"
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10      # Time before starting the probe
+            periodSeconds: 5            # How often the probe runs
+            failureThreshold: 2         # Number of failures before the pod is marked as unhealthy
+          livenessProbe:    
+            httpGet:
+              path: /health
+              port: 5000
+           initialDelaySeconds: 2      # Time before starting the probe
+           periodSeconds: 3            # How often the probe runs
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 5000
+            initialDelaySeconds: 2      # Time before starting the probe
+            periodSeconds: 3            # How often the probe runs        
+                
+

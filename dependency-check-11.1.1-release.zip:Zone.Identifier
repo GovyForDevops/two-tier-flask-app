@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/jeremylong/DependencyCheck/releases
+HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/5663857/30aee5b4-e79f-487d-a36a-5fc6007e1b8a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241205%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241205T080424Z&X-Amz-Expires=300&X-Amz-Signature=b3d79e85eaca88e7c984318aa3b68fcced9e7b426b575e6aae7a543bf7d3ceeb&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Ddependency-check-11.1.1-release.zip&response-content-type=application%2Foctet-stream
